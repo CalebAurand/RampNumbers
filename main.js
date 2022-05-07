@@ -129,11 +129,11 @@ const rampNumbers = (start) => {
   // rampCheck(12999);
   // console.log(rampCheck(1234));
   // console.log(rampCheck(123));
-  console.log(rampNumbers(123));
+//   console.log(rampNumbers(123));
   // console.log(rampCheck(4321));
-  console.log(rampNumbers(99));
-  console.log(rampNumbers(123));
-  console.log(rampNumbers(999));
+//   console.log(rampNumbers(99));
+//   console.log(rampNumbers(123));
+//   console.log(rampNumbers(999));
   // console.log(rampNumbers(9999));
   // console.log(rampNumbers(99999));
   
@@ -164,8 +164,10 @@ const rampNumbers = (start) => {
      let number = document.getElementById('numBox').value;
      //create a new <li> element in variable newLI
      let newLI = document.createElement('li');
+     //create a variable to hold the solution for rampNumbers(number);
+     let total = rampNumbers(number);
      //set the newLI innertext = to returned ramp number total
-     newLI.innerText = rampNumbers(number);
+     newLI.innerText = `total ramp numbers for ${number} is ${total}`;
      //append the newLI to the unordered list
      document.getElementById('list').appendChild(newLI);
   };
