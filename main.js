@@ -17,7 +17,7 @@ const rampNumbers = (start) => {
     //create a counter that holds the total of ramp numbers
     let total = 0;
     //create a loop to run through all numbers less than {start}
-    for(let i = start; i>0; i--){
+    for(let i = start; i>=0; i--){
       //for every number in the loop check if it is a ramp number
       //if it is, then increase the counter
       if(rampCheck(i)){
@@ -151,3 +151,21 @@ const rampNumbers = (start) => {
   //subtract the unnecessary numbers from each spot for comparison
   //compare each of the spots numbers to see if it matches the GREATER THAN criteria for a ramp number
   //if all of them do, then return true
+
+
+  /**
+   * This function will take in the number from numBox
+   * and pass it into the rampNumbers function. The returned
+   * number will then be posted to the page in a new <li>
+   * 
+   */
+  const addNumber = () =>{
+     // assign the value of the numBox number to a variable
+     let number = document.getElementById('numBox').value;
+     //create a new <li> element in variable newLI
+     let newLI = document.createElement('li');
+     //set the newLI innertext = to returned ramp number total
+     newLI.innerText = rampNumbers(number);
+     //append the newLI to the unordered list
+     document.getElementById('list').appendChild(newLI);
+  };
